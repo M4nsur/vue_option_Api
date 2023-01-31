@@ -1,0 +1,38 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style-type: none;
+  color: black;
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+header {
+  height: 100px;
+  background-color: gray;
+  padding: 10px 0;
+}
+header .header_container {
+  display: flex;
+  justify-content: space-between;
+}
+header .logo {
+  cursor: pointer;
+}
+header img {
+  width: 100px;
+  line-height: 100px;
+}
+header .linksWraper {
+  display: flex;
+  max-width: 800px;
+  justify-content: space-between;
+}
+header ul {
+  line-height: 80px;
+}/*# sourceMappingURL=main.css.map */
