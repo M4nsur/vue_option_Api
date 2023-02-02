@@ -1,0 +1,81 @@
+@media (max-width:992px)
+    header
+        .linksWrapper
+            li
+                font-size: 20px
+                font-weight: 600
+                margin-right: 30px
+            .linkReset
+                margin-right: 5px !important
+
+@media (max-width: 788px)
+    header
+        .container
+            position: relative
+            display: block
+            .logo
+                display: block
+            .btnBurger
+                position: absolute
+                right: -255%
+                top: 0
+                display: block
+                span
+                    width: 50px
+                    margin-top: 15px
+                    border-block-color: black
+            .btnBurgerActive
+                margin-top: 10px
+                span
+                    &:nth-child(1)
+                        transform: translateY(3px) rotate(-45deg)
+                    &:nth-child(2)
+                        display: none
+                    &:nth-child(3)
+                        margin-top: -2px
+                        transform: translateY(3px) rotate(45deg)
+            .linksWrapperNone
+                transition: 0.6s all
+                display: block
+                position: absolute
+                left: -600%
+                background-color: rgba(5, 18, 70, 0.932)
+                width: 100vw
+                height: 88.3vh
+                li
+                    text-align: center
+                    font-size: 23px
+                    font-weight: 600
+                    margin: 50px 0
+                    margin-right: 0
+                    a
+                        color: white
+                li:lastchild
+                    margin-top: 0px
+                    // margin-bottom: 90px
+            .linksWrapper
+                z-index: 1
+                left: 0
+    aside
+        .videoItem
+            z-index: -1
+
+@media (max-width: 576px)
+    header
+        .linksWrapperNone
+            transition: 0.6s all
+            display: block
+            position: absolute
+            left: -500%
+            background-color: rgba(5, 18, 70, 0.932)
+            width: 100vw
+            li
+                text-align: center
+                font-size: 10px
+                font-weight: 600
+                margin: 50px 0
+                margin-right: 0
+                a
+                    color: white
+                li:lastchild
+                    margin-top: 0px
