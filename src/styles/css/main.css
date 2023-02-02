@@ -19,7 +19,6 @@ body {
 }
 
 header {
-  position: fixed;
   max-width: 100%;
   height: 100px;
   background-color: #fff;
@@ -128,6 +127,9 @@ aside .descrSecond {
 }
 
 @media (max-width: 992px) {
+  header {
+    position: fixed;
+  }
   header .linksWrapper li {
     font-size: 20px;
     font-weight: 600;
@@ -136,8 +138,14 @@ aside .descrSecond {
   header .linksWrapper .linkReset {
     margin-right: 5px !important;
   }
+  aside {
+    padding-top: 74px;
+  }
 }
 @media (max-width: 788px) {
+  header {
+    position: fixed;
+  }
   header .container {
     position: relative;
     display: block;
