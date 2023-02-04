@@ -49,7 +49,7 @@ export default {
   methods: {
     test() {
       if (
-      (this.inputValues.name.trim()) > 3 &&
+        this.inputValues.name.trim() > 3 &&
         this.inputValues.telegram.trim() > 3 &&
         this.inputValues.text.trim() > 3
       ) {

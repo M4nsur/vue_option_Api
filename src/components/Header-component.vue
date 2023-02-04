@@ -2,7 +2,9 @@
   <header>
     <div class="container header_container">
       <div class="logo">
-        <img class="logoImg" src="../assets/logo1.svg" alt="logo" />
+        <a href="#"
+          ><img class="logoImg" src="../assets/logo1.svg" alt="logo"
+        /></a>
       </div>
       <div @click="handleBurger" :class="isActiveBtnBurger">
         <span></span><span></span><span></span>
