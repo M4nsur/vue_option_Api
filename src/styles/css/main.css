@@ -24,6 +24,7 @@ header {
   background-color: #fff;
   padding: 10px 0;
   box-shadow: 6px 6px 16px rgba(17, 17, 49, 0.12);
+  z-index: 1;
 }
 header .btnBurger {
   display: none;
@@ -63,8 +64,19 @@ header .linksWrapperNone li:last-child {
   margin-right: 0;
 }
 
+.link {
+  cursor: pointer;
+}
+
 aside {
   padding: 10px 0;
+}
+aside .videoItem {
+  width: 100%;
+  background: black;
+}
+aside .videoItem video {
+  width: 100%;
 }
 aside .titleWrapper {
   padding: 20px;
@@ -94,11 +106,14 @@ aside .arrowWrapper img {
   width: 10%;
 }
 aside .arrowWrapper .arrowText {
-  margin-top: 100px;
-  width: 30%;
+  margin-top: 50px;
+  width: 36%;
+}
+aside .arrowWrapper p {
   color: rgba(27, 58, 145, 0.9058823529);
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 600;
+  margin-bottom: 100px;
 }
 aside .descrWrapper {
   display: flex;
@@ -122,24 +137,116 @@ aside .descrWrapper .descrImg img {
 aside .promoImg img {
   width: 100%;
 }
-aside .descrSecond {
-  margin-top: 200px;
+aside .descrSecond h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: rgba(27, 58, 145, 0.9058823529);
+  font-weight: 900;
+  font-size: 28px;
+}
+
+article {
+  padding: 40px 0;
+}
+article .LogoAbout {
+  margin: 20px auto;
+  width: 500px;
+  text-align: center;
+}
+article .LogoAbout img {
+  width: 50%;
+}
+article .logoWrapperAbout {
+  width: 60%;
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 50px;
+}
+article .logoWrapperAbout img {
+  width: 80%;
+}
+article .descrAbout {
+  margin-bottom: 70px;
+  text-align: center;
+  font-weight: 400;
+  font-size: 25px;
+  color: rgba(27, 58, 145, 0.9058823529);
+}
+article .ourSt {
+  background: url("@/assets/aboutbg2.jpg") center center/cover no-repeat;
+  height: 60px;
+  padding: 10px;
+  width: 50%;
+  margin: 0 auto;
+  margin-bottom: 30px;
+}
+article .ourSt h2 {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 600;
+  color: white;
+}
+article img {
+  width: 60%;
+}
+article .iconsTechWrapper {
+  z-index: -1;
+  margin-top: 100px;
+  width: 80%;
+  margin: 0 auto;
+}
+article .iconsTechWrapper .carousel__item {
+  font-size: 20px;
+  z-index: -2;
+}
+article .iconsTechWrapper .slideWrapperOne {
+  margin-bottom: 50px;
+}
+article .slideWrapper {
+  z-index: -1;
+}
+article .aboutBgDown {
+  margin-top: 100px;
+  text-align: center;
+  max-width: 100%;
 }
 
 @media (max-width: 992px) {
   header {
+    width: 100%;
     position: fixed;
   }
-  header .linksWrapper li {
+  header .linksWrapperNone li {
     font-size: 20px;
     font-weight: 600;
     margin-right: 30px;
   }
-  header .linksWrapper .linkReset {
+  header .linksWrapperNone .linkReset {
     margin-right: 5px !important;
   }
   aside {
     padding-top: 74px;
+  }
+  aside .titleWrapper {
+    height: 300px;
+  }
+  aside .descrWrapper {
+    justify-content: space-between;
+    height: 500px;
+  }
+  aside .descrWrapper .descrText {
+    margin: 0 auto;
+    font-size: 19px;
+    font-weight: 600;
+    line-height: 20px;
+    width: 360px;
+  }
+  aside .descrWrapper .descrImg {
+    margin: 0 auto;
+    width: 50%;
+  }
+  aside .arrowWrapper {
+    margin-top: 40px;
   }
 }
 @media (max-width: 788px) {
@@ -155,7 +262,7 @@ aside .descrSecond {
   }
   header .container .btnBurger {
     position: absolute;
-    right: -255%;
+    right: 5px;
     top: 0;
     display: block;
   }
@@ -228,5 +335,73 @@ aside .descrSecond {
   }
   header .linksWrapperNone li li:lastchild {
     margin-top: 0px;
+  }
+  aside .titleWrapper h1 {
+    font-size: 50px;
+  }
+  aside .titleWrapper h2 {
+    font-size: 25px;
+    margin-top: 30px;
+  }
+  aside .descrWrapper {
+    flex-direction: column;
+    justify-content: space-between;
+    height: 800px;
+  }
+  aside .descrWrapper .descrText {
+    margin: 0 auto;
+    text-align: center;
+    font-size: 22px;
+    font-weight: 400;
+    width: 360px;
+  }
+  aside .descrWrapper .descrImg {
+    margin: 0 auto;
+    width: 70%;
+  }
+  aside .arrowWrapper {
+    margin: 20px 0;
+  }
+  aside .arrowWrapper .arrowText p {
+    font-weight: 500;
+    font-size: 18px;
+  }
+  aside .arrowWrapper img {
+    height: 60px;
+    margin-top: 320px;
+  }
+  article {
+    padding-top: 120px;
+  }
+  article .logoWrapperAbout {
+    margin-bottom: 20px;
+  }
+  article .logoWrapperAbout img {
+    width: 100%;
+  }
+  article .descrAbout {
+    margin-bottom: 50px;
+  }
+  article .outSt {
+    margin-bottom: 30px;
+  }
+  article .slideWrapperOne {
+    margin-bottom: 20px;
+  }
+  article .carousel__item img {
+    width: 90%;
+  }
+  article .aboutBgDown {
+    margin-top: 50px;
+  }
+  article .aboutBgDown img {
+    width: 100%;
+  }
+  footer {
+    margin-top: 20px;
+    padding-top: 25px;
+  }
+  footer .buildDescr {
+    font-size: 18px;
   }
 }/*# sourceMappingURL=main.css.map */

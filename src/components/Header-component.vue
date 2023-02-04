@@ -10,7 +10,9 @@
       <nav>
         <ul :class="checkBtnBurger">
           <li :class="link.class" v-for="link in links" :key="link.main">
-            <a :href="link.href">{{ link.main }}</a>
+            <router-link @click="handleBurger" :to="link.href">{{
+              link.main
+            }}</router-link>
           </li>
         </ul>
       </nav>
@@ -26,12 +28,12 @@ export default {
       links: [
         {
           main: "Главная",
-          href: "#",
+          href: "/",
           class: "link",
         },
         {
           main: "О нас",
-          href: "#",
+          href: "/about",
           class: "link",
         },
         {
@@ -40,12 +42,12 @@ export default {
           class: "link",
         },
         {
-          main: "Сообщество",
+          main: "Наши вакансии",
           href: "#",
           class: "link",
         },
         {
-          main: "Наши вакансии",
+          main: "Сообщество",
           href: "#",
           class: "link linkReset",
         },
@@ -65,6 +67,9 @@ export default {
   methods: {
     handleBurger() {
       this.burgerIsActive = !this.burgerIsActive;
+    },
+    test() {
+      console.log("привет");
     },
   },
 };

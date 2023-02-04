@@ -20,9 +20,20 @@
       </div>
     </div>
     <div class="arrowWrapper">
-      <div class="arrowText">Наш код без пороков</div>
+      <div class="arrowText">
+        <p>Наш код - цифровой язык будущего</p>
+        <p>Внедряем технологии для вашего успеха</p>
+      </div>
       <img src="@/assets/arrow1.png" alt="arrowDown" />
-      <div class="arrowText">Кодируем мечты в реальность</div>
+      <div class="arrowText">
+        <p>Кодируем мечты в реальность</p>
+        <p>Решения для следующего поколения</p>
+      </div>
+    </div>
+    <div class="descrSecond">
+      <h3>
+        Мы HasanTech. Наша команда гарантирует чистый код без всяких пороков
+      </h3>
     </div>
     <div class="videoItem" style="padding: 56.25% 0 0 0; position: relative">
       <iframe
@@ -38,10 +49,6 @@
         <img src="@/assets/networkBg.gif" alt="promo" />
       </div>
     </div> -->
-    <div class="descrSecond">
-      Наши эксперты гарантируют качественное выполнение проектов и заботу о
-      поддержании и развитии систем.
-    </div>
     <!-- <video
       id="rootVideo"
       class="videoItem"
