@@ -38,7 +38,7 @@ export default {
         },
         {
           main: "Обратная связь",
-          href: "#",
+          href: "/feedback",
           class: "link",
         },
         {
