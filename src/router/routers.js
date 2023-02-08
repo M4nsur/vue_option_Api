@@ -2,7 +2,8 @@ import { createRouter, createWebHistory } from "vue-router";
 import Home from "@/components/Main-component";
 import About from "@/components/About-component";
 import Feedback from "@/components/Feedback-component";
-// import NotFound from "@/components/pages/notFoundPage";
+import Community from "@/components/Community-component";
+import Vacancy from "@/components/Vacancy-component";
 
 const routerHistory = createWebHistory();
 const routers = new createRouter({
@@ -23,11 +24,16 @@ const routers = new createRouter({
       name: "feedback",
       component: Feedback,
     },
-    // {
-    //   path: "/:CatchAll(.*)",
-    //   name: "notFound",
-    //   component: NotFound,
-    // },
+    {
+      path: "/community",
+      name: "community",
+      component: Community,
+    },
+    {
+      path: "/vacancy",
+      name: "vacancy",
+      component: Vacancy,
+    },
   ],
 });
 

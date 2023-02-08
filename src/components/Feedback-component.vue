@@ -35,6 +35,10 @@
       Ваш запрос был отправлен. Наш коллега свяжется с вами, если посчитаем, что
       ваше обращение нуждается в фидбеке.
     </div>
+    <div class="dev">
+      <h2>В разработке</h2>
+      <img src="@/assets/working.gif" alt="" />
+    </div>
   </div>
 </template>
 
@@ -44,9 +48,9 @@ export default {
     return {
       sumbit: "",
       inputValues: {
-        name: "dsadasdsa",
-        telegram: "@iz1890",
-        text: "sadasd",
+        name: "",
+        telegram: "",
+        text: "",
       },
       validateKeys: {
         generalValidate: false,
@@ -70,6 +74,7 @@ export default {
         this.validateKeys[key] = false;
       }
     },
+    //валидацию нужно переписать. Уберу заглушку, когда закончим бэкенд
     validate() {
       const firstEl = this.inputValues.telegram[0];
       if (
@@ -86,7 +91,6 @@ export default {
         this.hangleKeys();
         this.validateKeys.checkBlackList = true;
       } else {
-        this.sumbit = "send.php";
         this.hangleKeys();
         this.clearKeys(this.inputValues);
         this.validateKeys.isSend = true;

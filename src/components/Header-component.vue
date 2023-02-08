@@ -45,12 +45,12 @@ export default {
         },
         {
           main: "Наши вакансии",
-          href: "#",
+          href: "/vacancy",
           class: "link",
         },
         {
           main: "Сообщество",
-          href: "#",
+          href: "/community",
           class: "link linkReset",
         },
       ],
