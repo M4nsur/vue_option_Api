@@ -9,13 +9,23 @@
   color: black;
 }
 
+html {
+  height: 100%;
+}
+
 body {
   background-color: #ffffff;
+  height: 100%;
+}
+
+#App {
+  height: 100%;
 }
 
 .container {
   max-width: 1140px;
   margin: 0 auto;
+  min-height: 100%;
 }
 
 header {
@@ -248,6 +258,17 @@ article .aboutBgDown {
   aside .arrowWrapper {
     margin-top: 40px;
   }
+  #feedbackForce {
+    padding: 80px 0 0 0;
+    margin: 0 auto;
+    text-align: center;
+    max-height: 100%;
+  }
+  #feedbackForce .form {
+    padding: 40px;
+    margin: 0 auto;
+    max-width: 100%;
+  }
 }
 @media (max-width: 788px) {
   header {
@@ -397,6 +418,25 @@ article .aboutBgDown {
   article .aboutBgDown img {
     width: 100%;
   }
+  #feedbackForce h2 {
+    font-size: 25px;
+  }
+  #feedbackForce p {
+    font-size: 15px;
+  }
+  #feedbackForce p::before {
+    font-size: 15px;
+  }
+  #feedbackForce .form {
+    max-height: 500px;
+    padding-bottom: 0;
+  }
+  #feedbackForce .form button {
+    margin-top: -25px;
+    height: 30px;
+    padding: 2px;
+    font-size: 15px;
+  }
   footer {
     margin-top: 20px;
     padding-top: 25px;
@@ -405,25 +445,62 @@ article .aboutBgDown {
     font-size: 18px;
   }
 }
+@media (max-height: 740px) {
+  #feedbackForce .errorValidate {
+    background-color: rgba(247, 103, 103, 0.6156862745);
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 5px;
+  }
+  #feedbackForce .success {
+    background-color: rgba(37, 187, 117, 0.6156862745);
+  }
+  #feedbackForce h2 {
+    margin: 0;
+  }
+  #feedbackForce .form {
+    max-height: 410px;
+    padding-bottom: 0;
+  }
+  #feedbackForce .form p::before {
+    margin-top: 10px;
+  }
+  #feedbackForce .form button {
+    margin-top: -20px;
+    height: 30px;
+    padding: 2px;
+    font-size: 15px;
+  }
+}
 .feedback {
   padding: 150px;
 }
+.feedback .errorValidate {
+  background-color: rgba(247, 103, 103, 0.6156862745);
+  margin-top: 50px;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 20px;
+}
+.feedback .success {
+  background-color: rgba(37, 187, 117, 0.6156862745);
+}
 .feedback .form {
-  width: 540px;
-  height: 438px;
   margin: 0 auto;
   background: rgba(235, 237, 243, 0.9058823529);
   border-radius: 8px;
   box-shadow: 0 0 40px -10px #000;
-  padding: 40px;
-  max-width: calc(100vw - 40px);
+  padding: 50px 70px 0 70px;
+  max-width: 60%;
   box-sizing: border-box;
   position: relative;
+  height: 550px;
 }
-.feedback h3 {
+.feedback h2 {
+  font-size: 28px;
   margin: 20px 0;
   padding-bottom: 10px;
-  width: 180px;
   color: rgba(27, 58, 145, 0.9058823529);
 }
 .feedback input {
@@ -442,12 +519,14 @@ article .aboutBgDown {
 }
 .feedback p {
   color: rgba(27, 58, 145, 0.9058823529);
+  margin-bottom: 40px;
+  font-size: 18px;
 }
 .feedback p:before {
   content: attr(type);
   display: block;
   margin: 28px 0 0;
-  font-size: 14px;
+  font-size: 18px;
   color: rgba(27, 58, 145, 0.9058823529);
 }
 .feedback button {
@@ -459,6 +538,7 @@ article .aboutBgDown {
   color: rgba(27, 58, 145, 0.9058823529);
   cursor: pointer;
   transition: all 0.3s;
+  font-size: 18px;
 }
 .feedback button:hover {
   background: #a7a7bd;
@@ -467,11 +547,9 @@ article .aboutBgDown {
 .feedback .feedback {
   content: "Hi";
   position: absolute;
-  bottom: -15px;
-  right: -20px;
   background: rgba(27, 58, 145, 0.9058823529);
   color: rgba(184, 193, 218, 0.9058823529);
-  width: 320px;
+  width: 30%;
   padding: 16px 4px 16px 0;
   border-radius: 6px;
   font-size: 13px;

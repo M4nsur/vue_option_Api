@@ -1,24 +1,40 @@
 <template>
-  <div class="feedback">
-    <form action="" class="form" @submit.prevent>
-      <h3>Связаться с нами</h3>
+  <div class="feedback" id="feedbackForce">
+    <form :action="sumbit" class="form" @submit.prevent>
+      <h2 class="titleFeedb">Связаться с нами</h2>
       <p type="Имя:">
-        <input v-model="inputValues.name" placeholder="Ваше имя" />
+        <input name="name" v-model="inputValues.name" placeholder="Ваше имя" />
       </p>
       <p type="Ваш телеграм для обратной связи:">
         <input
+          name="telegram"
           v-model="inputValues.telegram"
           placeholder="Например: @example"
         />
       </p>
       <p type="Сообщение:">
         <input
+          name="text"
           v-model="inputValues.text"
-          placeholder="Мы игнорируем запросы, где нет развернутого сообщения."
+          placeholder="Опишите максимально подробно"
         />
       </p>
-      <button @click="test">Send Message</button>
+      <button @click="validate" :disabled="isSend">Send Message</button>
     </form>
+    <div class="errorValidate" v-if="validateKeys.generalValidate">
+      Указаны некоректные данные
+    </div>
+    <div class="errorValidate" v-else-if="validateKeys.checkTelegram">
+      Неправильный формат телеграма
+    </div>
+    <div class="errorValidate" v-else-if="validateKeys.checkBlackList">
+      Вы были добавлены в черный список HasanTech за нарушение наших внутренних
+      правил
+    </div>
+    <div class="errorValidate success" v-else-if="validateKeys.isSend">
+      Ваш запрос был отправлен. Наш коллега свяжется с вами, если посчитаем, что
+      ваше обращение нуждается в фидбеке.
+    </div>
   </div>
 </template>
 
@@ -26,35 +42,55 @@
 export default {
   data() {
     return {
+      sumbit: "",
       inputValues: {
-        name: "",
-        telegram: "",
-        text: "",
+        name: "dsadasdsa",
+        telegram: "@iz1890",
+        text: "sadasd",
+      },
+      validateKeys: {
+        generalValidate: false,
+        checkBlackList: false,
+        checkTelegram: false,
+        isSend: false,
       },
     };
   },
-
   computed: {
-    // validate() {
-    //   if (
-    //     this.inputValues.name &&
-    //     this.inputValues.telegram &&
-    //     this.inputValues.text
-    //   ) {
-    //     return true;
-    //   }
-    //   return false;
-    // },
+    addEventStore() {
+      return this.$store.getters.getBlackList.values;
+    },
   },
   methods: {
-    test() {
+    clearKeys(obj) {
+      Object.keys(obj).forEach((key) => delete this.inputValues[key]);
+    },
+    hangleKeys() {
+      for (const key in this.validateKeys) {
+        this.validateKeys[key] = false;
+      }
+    },
+    validate() {
+      const firstEl = this.inputValues.telegram[0];
       if (
-        this.inputValues.name.trim() > 3 &&
-        this.inputValues.telegram.trim() > 3 &&
-        this.inputValues.text.trim() > 3
+        !Object.values(this.inputValues).every((el) => el.trim().length > 2)
       ) {
-        console.log("true");
-      } else console.log("false");
+        this.hangleKeys();
+        this.validateKeys.generalValidate = true;
+      } else if (firstEl !== "@") {
+        this.hangleKeys();
+        this.validateKeys.checkTelegram = true;
+      } else if (
+        this.addEventStore.find((el) => el === this.inputValues.telegram)
+      ) {
+        this.hangleKeys();
+        this.validateKeys.checkBlackList = true;
+      } else {
+        this.sumbit = "send.php";
+        this.hangleKeys();
+        this.clearKeys(this.inputValues);
+        this.validateKeys.isSend = true;
+      }
     },
   },
 };
