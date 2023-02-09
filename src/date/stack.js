@@ -52,7 +52,7 @@ export default {
       name: "typescript",
       descr:
         "TypeScript - это язык программирования, который является суперсетом JavaScript и добавляет поддержку типов данных и других функций, которые повышают стабильность и производительность кода. TypeScript компилируется в JavaScript, что позволяет работать с большинством существующих библиотек и фреймворков.",
-      url: require("@/assets/icons/ts.png"),
+      url: require("@/assets/icons/typescript.png"),
     },
     {
       name: "redux",
