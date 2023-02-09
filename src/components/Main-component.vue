@@ -26,8 +26,8 @@
       </div>
       <img src="@/assets/arrow1.png" alt="arrowDown" />
       <div class="arrowText">
-        <p>Кодируем мечты в реальность</p>
         <p>Решения для следующего поколения</p>
+        <p>Кодируем мечты в реальность</p>
       </div>
     </div>
     <div class="descrSecond">
